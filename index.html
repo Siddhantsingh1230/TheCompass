@@ -88,7 +88,7 @@
 
         font-family: "Poppins", sans-serif;
 
-        font-size: 10px;
+        font-size: 15px;
 
         margin-top: 5px;
 
@@ -118,7 +118,7 @@
 
   </head>
 
-  <body onload="getLocation()">
+  <body>
 
     <div id="deg" class="deg">123.89°</div>
 
@@ -164,16 +164,17 @@
 
       }
 
-      
+      let needle=document.getElementById('needle');
 
       function showPosition(position) {
+        needle.style.transform=`rotate(${position.coords.heading}deg)`;
 
-        latitude.innerText = position.coords.latitude.toFixed(3);
+        latitude.innerText = position.coords.latitude.toFixed(2);
 
-          longitude.innerText = position.coords.longitude.toFixed(3);
+          longitude.innerText = position.coords.longitude.toFixed(2);
 
       }
-
+      setInterval( getLocation(),10);
     </script>
 
   </body>

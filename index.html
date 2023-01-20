@@ -180,7 +180,8 @@
       let deg=document.getElementById('deg');
       getLocation();
       navigator.geolocation.watchPosition((data)=>{
-          deg.innerText=data.coords.heading+'°'; 
+        console.log(data.coords.heading);
+          //deg.innerText=data.coords.heading+'°'; 
         needle.style.transform=`rotate(${data.coords.heading}deg)`
         },(err)=>{alert("Turn On your Location );});
     </script>

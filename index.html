@@ -170,7 +170,7 @@
       let needle=document.getElementById('needle');
 
       function showPosition(position) {
-        needle.style.transform=`rotate(${position.coords.heading}deg)`;
+        
 
         latitude.innerText = position.coords.latitude.toFixed(2);
 
@@ -178,7 +178,9 @@
 
       }
       getLocation();
-      setInterval(showPosition,10);
+      navigator.geolocation.watchPosition((data)=>{
+           needle.style.transform=`rotate(${data.coords.heading}deg)`
+        },(err)=>{alert(err);});
     </script>
 
   </body>

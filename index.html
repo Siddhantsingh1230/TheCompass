@@ -183,7 +183,7 @@
         console.log(data.coords.heading);
           deg.innerText=(data.coords.heading.toFixed(2))+'°'; 
         needle.style.transform=`rotate(${data.coords.heading}deg)`;
-        },(err)=>{alert("Turn On your Location" );},{enableHighAccuracy: true});
+        },(err)=>{alert("Turn On your Location" );});
     </script>
 
   </body>

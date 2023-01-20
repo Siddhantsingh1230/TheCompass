@@ -177,10 +177,12 @@
           longitude.innerText = position.coords.longitude.toFixed(2);
 
       }
+      let deg=document.getElementById('deg');
       getLocation();
       navigator.geolocation.watchPosition((data)=>{
-           needle.style.transform=`rotate(${data.coords.heading}deg)`
-        },(err)=>{alert(err);});
+          deg.innerText=data.coords.heading+'°'; 
+        needle.style.transform=`rotate(${data.coords.heading}deg)`
+        },(err)=>{alert("Turn On your Location );});
     </script>
 
   </body>

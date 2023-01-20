@@ -113,6 +113,9 @@
         color: #ff1e00;
 
       }
+      .needle{
+        transition: all .2s ease-in-out;
+      }
 
     </style>
 
@@ -174,7 +177,8 @@
           longitude.innerText = position.coords.longitude.toFixed(2);
 
       }
-      setInterval( getLocation,10);
+      getLocation();
+      setInterval(showPosition,10);
     </script>
 
   </body>

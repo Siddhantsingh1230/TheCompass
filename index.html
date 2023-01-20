@@ -168,9 +168,9 @@
 
       function showPosition(position) {
 
-        latitude.innerText = position.coords.latitude ;
+        latitude.innerText = position.coords.latitude.toFixed(3);
 
-          longitude.innerText = position.coords.longitude;
+          longitude.innerText = position.coords.longitude.toFixed(3);
 
       }
 

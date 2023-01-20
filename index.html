@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>Mobile Compass</title>
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+
+      rel="stylesheet"
+
+    />
+
+    <style type="text/css" media="all">
+
+      * {
+
+        margin: 0px;
+
+        padding: 0px;
+
+      }
+
+      body {
+
+        background-color: black;
+
+        height: 100vh;
+
+        width: 100vw;
+
+        overflow: hidden;
+
+      }
+
+      .deg {
+
+        color: white;
+
+        font-family: "Poppins", sans-serif;
+
+        font-size: 45px;
+
+        margin: 90px 0px 50px 0px;
+
+        text-align: center;
+
+        font-weight: bold;
+
+      }
+
+      .needle {
+
+        text-align: center;
+
+        margin-bottom: 80px;
+
+      }
+
+      .needleimg {
+
+        filter: invert(1);
+
+        height: 250px;
+
+        width: 250px;
+
+        transform: rotate(-44deg);
+
+      }
+
+      .info {
+
+        color: white;
+
+        font-family: "Poppins", sans-serif;
+
+        font-size: 20px;
+
+        margin-top: 5px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        text-align: center;
+
+        width: 80%;
+
+      }
+
+      .text {
+
+        margin: 0px 50px;
+
+      }
+
+      .field {
+
+        color: #ff1e00;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body onload="getLocation()">
+
+    <div id="deg" class="deg">123.89°</div>
+
+    <div id="needle" class="needle">
+
+      <img class="needleimg" src="compass.png" alt="The Compass" />
+
+    </div>
+
+    <div class="info">
+
+      <span class="text" id="longitude">00</span>
+
+      <span class="text" id="latitude">00</span>
+
+    </div>
+
+    <div class="info">
+
+      <span class="text field">lon</span>
+
+      <span class="text field">lat</span>
+
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+
+    let longitude=document.getElementById('longitude');
+
+    let latitude=document.getElementById('latitude');
+
+      function getLocation() {
+
+        if (navigator.geolocation) {
+
+          navigator.geolocation.getCurrentPosition(showPosition);
+
+        } else {
+
+          alert( "Geolocation is not supported by this brbrowser");
+
+        }
+
+      }
+
+      
+
+      function showPosition(position) {
+
+        latitude.innerText = position.coords.latitude ;
+
+          longitude.innerText = position.coords.longitude;
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
+

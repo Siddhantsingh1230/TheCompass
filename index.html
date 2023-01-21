@@ -170,23 +170,23 @@
       let needle=document.getElementById('needle');
 
       function showPosition(position) {
-        
-
+        let deg=document.getElementById('deg');
+         deg.innerText=(data.coords.heading.toFixed(2))+'°';
         latitude.innerText = position.coords.latitude.toFixed(2);
 
           longitude.innerText = position.coords.longitude.toFixed(2);
 
       }
-      let deg=document.getElementById('deg');
+      
       getLocation();
-      function watch(){
-      navigator.geolocation.watchPosition((data)=>{
-        console.log(data.coords.heading);
-          deg.innerText=(data.coords.heading.toFixed(2))+'°'; 
-        needle.style.transform=`rotate(${data.coords.heading}deg)`;
-        },(err)=>{alert("Turn On your Location" );});
-        }
-      setInterval(watch(),10);
+  
+
+
+      
+       
+
+        
+
     </script>
 
   </body>

@@ -179,11 +179,14 @@
       }
       let deg=document.getElementById('deg');
       getLocation();
+      function watch(){
       navigator.geolocation.watchPosition((data)=>{
         console.log(data.coords.heading);
           deg.innerText=(data.coords.heading.toFixed(2))+'°'; 
         needle.style.transform=`rotate(${data.coords.heading}deg)`;
         },(err)=>{alert("Turn On your Location" );});
+        }
+      setInterval(watch(),10);
     </script>
 
   </body>

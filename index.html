@@ -171,7 +171,7 @@
 
       function showPosition(position) {
         let deg=document.getElementById('deg');
-         deg.innerText=(data.coords.heading.toFixed(2))+'°';
+         deg.innerText=(position.coords.heading.toFixed(2))+'°';
         latitude.innerText = position.coords.latitude.toFixed(2);
 
           longitude.innerText = position.coords.longitude.toFixed(2);
